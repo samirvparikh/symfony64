@@ -7,6 +7,14 @@ import './vendors/flag-icon-css/css/flag-icon.min.css';
 import './images/favicon.png';
 
 
+
+import './vendors/core/core.js';
+import './vendors/flatpickr/flatpickr.min.js';
+import './vendors/apexcharts/apexcharts.min.js';
+import './vendors/feather-icons/feather.min.js';
+import './js/template.js';
+import './js/dashboard-dark.js';
+
 /*
  * Welcome to your app's main JavaScript file!
  *
