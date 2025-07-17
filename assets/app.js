@@ -1,4 +1,12 @@
 import './bootstrap.js';
+import './css/style.css';
+import './vendors/core/core.css';
+import './vendors/flatpickr/flatpickr.min.css';
+import './fonts/feather-font/css/iconfont.css';
+import './vendors/flag-icon-css/css/flag-icon.min.css';
+import './images/favicon.png';
+
+
 /*
  * Welcome to your app's main JavaScript file!
  *
