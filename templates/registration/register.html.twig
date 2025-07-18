@@ -7,17 +7,71 @@
         <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
     {% endfor %}
 
-    <h1>Register</h1>
+    <div class="page-wrapper full-page">
+			<div class="page-content d-flex align-items-center justify-content-center">
 
-    {{ form_errors(registrationForm) }}
+				<div class="row w-100 mx-0 auth-page">
+					<div class="col-md-8 col-xl-6 mx-auto">
+						<div class="card">
+							<div class="row">
+                <div class="col-md-4 pe-md-0">
+                  <div class="auth-side-wrapper">
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
+                  </div>
+                </div>
+                <div class="col-md-8 ps-md-0">
+                    <div class="auth-form-wrapper px-4 py-5">
+                        <a href="#" class="noble-ui-logo logo-light d-block mb-2">Noble<span>UI</span></a>
+                        <h1 class="h3 mb-3 font-weight-normal">Please sign up</h1>
+                        
+                        {{ form_errors(registrationForm) }}
 
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+                        {{ form_start(registrationForm) }}
+                            {# Email Field #}
+                            <div class="mb-3">
+                                <label for="{{ registrationForm.email.vars.id }}" class="form-label">Email address</label>
+                                {{ form_widget(registrationForm.email, {
+                                'attr': {
+                                    'class': 'form-control',
+                                    'placeholder': 'Email',
+                                    'id': registrationForm.email.vars.id
+                                }
+                                }) }}
+                                {{ form_errors(registrationForm.email) }}
+                            </div>
+
+
+                            {# Password Field #}
+                            <div class="mb-3">
+                                <label for="{{ registrationForm.plainPassword.vars.id }}" class="form-label">Password</label>
+                                {{ form_widget(registrationForm.plainPassword, {
+                                'attr': {
+                                    'class': 'form-control',
+                                    'placeholder': 'Password',
+                                    'autocomplete': 'current-password',
+                                    'id': registrationForm.plainPassword.vars.id
+                                }
+                                }) }}
+                                {{ form_errors(registrationForm.plainPassword) }}
+                            </div>
+
+                            
+                            
+
+                            {# Submit Buttons #}
+                            <div>
+                                <button type="submit" class="btn btn-primary text-white me-2 mb-2 mb-md-0">Sign up</button>                                
+                            </div>
+                            <a href="{{ path('app_login') }}" class="d-block mt-3 text-muted">Already a user? Sign in</a>
+                        {{ form_end(registrationForm) }}
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    
 {% endblock %}

@@ -10,20 +10,8 @@
 </head>
 <body>
     <div class="main-wrapper">
-        {% include 'partials/_sidebar.html.twig' %}
-
-        <div class="page-wrapper">
-            {% include 'partials/_navbar.html.twig' %}
-
-            <div class="page-content">
-                {% block body %}{% endblock %}
-            </div>
-
-            {% include 'partials/_footer.html.twig' %}
-        </div>
-
+        {% block body %}{% endblock %}
     </div>
-
 
   {% block javascripts %}
     <script src="{{ asset('build/app.js') }}"></script>
