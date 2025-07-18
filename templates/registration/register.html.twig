@@ -37,7 +37,8 @@
                                     'id': registrationForm.email.vars.id
                                 }
                                 }) }}
-                                {{ form_errors(registrationForm.email) }}
+                                
+                                <label class="text-danger">{{ form_errors(registrationForm.email) }}</label>
                             </div>
 
 
@@ -52,7 +53,7 @@
                                     'id': registrationForm.plainPassword.vars.id
                                 }
                                 }) }}
-                                {{ form_errors(registrationForm.plainPassword) }}
+                                <label class="text-danger">{{ form_errors(registrationForm.plainPassword) }}</label>
                             </div>
 
                             

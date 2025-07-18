@@ -11,11 +11,14 @@
 <div class="example-wrapper">
     <h1>Welcome to NPMS! ✅</h1>
 
-    
-    <span>Click Here Login!</span>
     <ul>
-        <li>Your controller at <code>/var/www/html/symfony/symfony64/src/Controller/SiteController.php</code></li>
-        <li>Your template at <code>/var/www/html/symfony/symfony64/templates/site/index.html.twig</code></li>
+        <li>
+            <a class="dropdown-item" href="{{ path('app_login') }}">
+                <span>Click Here Login</span>
+            </a>
+        </li>
     </ul>
+
+    
 </div>
 {% endblock %}
