@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Patient index{% endblock %}
+
+{% block body %}
+    <h1>Patient index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>FirstName</th>
+                <th>MiddleName</th>
+                <th>LastName</th>
+                <th>Dob</th>
+                <th>Gender</th>
+                <th>Email</th>
+                <th>CellPhone</th>
+                <th>ResponsibleParty</th>
+                <th>PrimaryDentist</th>
+                <th>FeeSchedule</th>
+                <th>PreferredClinic</th>
+                <th>CreatedBy</th>
+                <th>UpdatedBy</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for patient in patients %}
+            <tr>
+                <td>{{ patient.id }}</td>
+                <td>{{ patient.firstName }}</td>
+                <td>{{ patient.middleName }}</td>
+                <td>{{ patient.lastName }}</td>
+                <td>{{ patient.dob ? patient.dob|date('Y-m-d') : '' }}</td>
+                <td>{{ patient.gender }}</td>
+                <td>{{ patient.email }}</td>
+                <td>{{ patient.cellPhone }}</td>
+                <td>{{ patient.responsibleParty }}</td>
+                <td>{{ patient.primaryDentist }}</td>
+                <td>{{ patient.feeSchedule }}</td>
+                <td>{{ patient.preferredClinic }}</td>
+                <td>{{ patient.createdBy }}</td>
+                <td>{{ patient.updatedBy }}</td>
+                <td>
+                    <a href="{{ path('app_patient_show', {'id': patient.id}) }}">show</a>
+                    <a href="{{ path('app_patient_edit', {'id': patient.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="15">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_patient_new') }}">Create new</a>
+{% endblock %}
