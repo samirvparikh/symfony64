@@ -24,6 +24,7 @@ class LoginFormAuthenticator extends AbstractLoginFormAuthenticator
 
     public function __construct(private UrlGeneratorInterface $urlGenerator)
     {
+
     }
 
     public function authenticate(Request $request): Passport
@@ -50,7 +51,8 @@ class LoginFormAuthenticator extends AbstractLoginFormAuthenticator
 
         // For example:
         // return new RedirectResponse($this->urlGenerator->generate('some_route'));
-        throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
+        // throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
+        return new RedirectResponse('/dashboard');
     }
 
     protected function getLoginUrl(Request $request): string
