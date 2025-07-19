@@ -28,8 +28,8 @@ class PatientType extends AbstractType
                 'row_attr' => ['class' => 'mb-3'],
             ])
             ->add('dob', null, [
+                'attr' => ['class' => 'form-control'],
                 'label_attr' => ['class' => 'form-label'],
-                'attr' => ['class' => 'form-control mb-4 mb-md-0', 'data-inputmask' => "'alias': 'datetime'", 'data-inputmask-inputformat' => 'dd-mm-yyyy'],
                 'row_attr' => ['class' => 'mb-3'],
             ])
             ->add('gender', null, [
