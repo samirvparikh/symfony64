@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Patient;
-use App\Form\Patient1Type;
+use App\Form\PatientType;
 use App\Repository\PatientRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -26,7 +26,7 @@ final class PatientController extends AbstractController
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $patient = new Patient();
-        $form = $this->createForm(Patient1Type::class, $patient);
+        $form = $this->createForm(PatientType::class, $patient);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -53,7 +53,7 @@ final class PatientController extends AbstractController
     #[Route('/{id}/edit', name: 'app_patient_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Patient $patient, EntityManagerInterface $entityManager): Response
     {
-        $form = $this->createForm(Patient1Type::class, $patient);
+        $form = $this->createForm(PatientType::class, $patient);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

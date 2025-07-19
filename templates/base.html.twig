@@ -4,18 +4,66 @@
   <meta charset="UTF-8">
   <title>{% block title %}Dashboard{% endblock %}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {# Google Fonts #}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
   {% block stylesheets %}
-    <link rel="stylesheet" href="{{ asset('build/app.css') }}">
+    
+
+  {# Core CSS #}
+  <link rel="stylesheet" href="{{ asset('vendors/core/core.css') }}">
+
+  {# Plugin CSS for this page #}
+  <link rel="stylesheet" href="{{ asset('vendors/flatpickr/flatpickr.min.css') }}">
+
+  {# Injected Fonts and Icons #}
+  <link rel="stylesheet" href="{{ asset('fonts/feather-font/css/iconfont.css') }}">
+  <link rel="stylesheet" href="{{ asset('vendors/flag-icon-css/css/flag-icon.min.css') }}">
+
+  {# Layout Style #}
+  <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
+  {# Favicon #}
+  <link rel="shortcut icon" href="{{ asset('images/favicon.png') }}">
   {% endblock %}
 </head>
 <body>
     <div class="main-wrapper">
-        {% block body %}{% endblock %}
+        {% include 'partials/_sidebar.html.twig' %}
+
+        <div class="page-wrapper">
+            {% include 'partials/_navbar.html.twig' %}
+
+            <div class="page-content">
+                {% block body %}{% endblock %}
+            </div>
+
+            {% include 'partials/_footer.html.twig' %}
+        </div>
+
     </div>
 
+  <script src="{{ asset('vendors/feather-icons/feather.min.js') }}"></script>
+  <script src="{{ asset('js/template.js') }}"></script>
+
   {% block javascripts %}
-    <script src="{{ asset('build/app.js') }}"></script>
+    {# Core JS #}
+    <script src="{{ asset('vendors/core/core.js') }}"></script>
+
+    {# Plugin JS for this page #}
+    <script src="{{ asset('vendors/flatpickr/flatpickr.min.js') }}"></script>
+    <script src="{{ asset('vendors/apexcharts/apexcharts.min.js') }}"></script>
+
+    {# Injected Scripts #}
+    <script src="{{ asset('vendors/feather-icons/feather.min.js') }}"></script>
+    <script src="{{ asset('js/template.js') }}"></script>
+
+    {# Custom JS for this page #}
+    <script src="{{ asset('js/dashboard-dark.js') }}"></script>
   {% endblock %}
+
+  
 </body>
 </html>
 

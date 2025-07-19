@@ -3,11 +3,24 @@
 {% block title %}Edit Patient{% endblock %}
 
 {% block body %}
-    <h1>Edit Patient</h1>
+    <div class="main-content d-flex justify-content-between flex-wrap">
+        <h2 class="page-title">Edit Patient</h2>
+        <div class="d-flex align-items-center flex-wrap text-nowrap">
+            {{ include('patient/_delete_form.html.twig') }}  
+            <a href="{{ path('app_patient_index') }}" class="btn btn-secondary me-1 mb-1 mb-md-0">
+                Back to List
+            </a>
+        </div>
+    </div>
 
-    {{ include('patient/_form.html.twig', {'button_label': 'Update'}) }}
+    <div class="row">
+        <div class="col-md-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    {{ include('patient/_form.html.twig', {'button_label': 'Update'}) }}
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <a href="{{ path('app_patient_index') }}">back to list</a>
-
-    {{ include('patient/_delete_form.html.twig') }}
 {% endblock %}

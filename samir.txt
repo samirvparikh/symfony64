@@ -1,0 +1,16 @@
+#Symfony
+
+php8.4 | symfony new my_project_directory --version="8.0.x-dev" --webapp
+
+php8.2 | symfony new my_project_directory --version="7.4.x-dev" --webapp
+
+php8.2 | symfony new my_project_directory --version="7.3.x-dev" --webapp
+
+php8.1 | symfony new my_project_directory --version="6.4.*" --webapp
+
+
+symfony -v
+symfony new --webapp my_project
+
+
+php bin/console make:crud Patient
